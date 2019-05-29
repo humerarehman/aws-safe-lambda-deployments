@@ -1,14 +1,21 @@
 version: 0.2
 
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+
 phases:
-  pre_build:
-    commands:
-    - echo testing
+  install:
+    runtime-versions:
+        python: 3.7
   build:
     commands:
-    - echo in build
-    - ls
-    - aws s3 ls
-  post_build:
-    commands:
-    - echo Deployed Successfully!
+      - python --version
+      - curl -O https://bootstrap.pypa.io/get-pip.py
+      - python3 get-pip.py --user
+      - pip install awsebcli --upgrade --user
+      - aws s3 ls
