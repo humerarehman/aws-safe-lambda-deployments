@@ -18,8 +18,5 @@ phases:
       - curl -O https://bootstrap.pypa.io/get-pip.py
       - python3 get-pip.py --user
       - pip install awsebcli --upgrade --user
-      - aws s3 ls
-      - pwd
-      - ls -ll
       - zip function.zip index.js
       - aws lambda update-function-code --function-name sample-lambda --zip-file fileb://function.zip
