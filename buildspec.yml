@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+    - echo testing
+  build:
+    commands:
+    - echo in build
+    - ls
+    - aws s3 ls
+  post_build:
+    commands:
+    - echo Deployed Successfully!
