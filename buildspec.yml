@@ -21,3 +21,5 @@ phases:
       - aws s3 ls
       - pwd
       - ls -la
+      - zip function.zip returnS3Buckets.js
+      - aws lambda update-function-code --function-name sample-lambda --zip-file fileb://function.zip
