@@ -20,6 +20,6 @@ phases:
       - pip install awsebcli --upgrade --user
       - aws s3 ls
       - pwd
-      - ls -la
+      - ls -ll
       - zip function.zip index.js
       - aws lambda update-function-code --function-name sample-lambda --zip-file fileb://function.zip
